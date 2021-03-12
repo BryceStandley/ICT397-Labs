@@ -3,10 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+*.doc*
+*.DS_Store
+*._*
+*.zip
 # User-specific files
 *.rsuser
 *.suo
-*.user
+#*.user
 *.userosscache
 *.sln.docstates
 
@@ -222,7 +226,7 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
-# Including strong name files can present a security risk
+# Including strong name files can present a security 
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
