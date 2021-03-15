@@ -33,8 +33,6 @@ float lastFrame = 0.0f;
 // lighting
 glm::vec3 lightPos(0.0, 0.0f, 0.0f);
 
-bool wire = true;
-
 int main()
 {
     // glfw: initialize and configure
@@ -154,9 +152,9 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         //h.Render();
 
-        if (wire)
+        if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
             glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        else if (!wire)
+        else if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
         // view/projection transformations
@@ -222,8 +220,6 @@ void processInput(GLFWwindow* window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
-        wire = !wire;
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
