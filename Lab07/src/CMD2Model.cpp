@@ -221,17 +221,19 @@ void CMD2Model::LoadModel(const char* sFilename, const char* tFilename)
     FILE* fp;
     errno_t err;
 
-    /*std::fstream fs;
-    fs.open(sFilename, std::fstream::in | std::fstream::out | std::fstream::app);
-    if(fs.fail())
+#if _WIN32
+    if((err = fopen_s(&fp, sFilename, "rb") != 0))
     {
         std::cout << "ERROR OPENING FILE -> " << sFilename << std::endl;
-    }*/
+    }
+#elif __APPLE__
+
     fp = fopen(sFilename, "rb");
     if (fp == nullptr)
     {
         std::cout << "ERROR OPENING FILE -> " << sFilename << std::endl;
     }
+#endif  
     else
     {
         //std::cout << "DEBUG - 1" << std::endl;

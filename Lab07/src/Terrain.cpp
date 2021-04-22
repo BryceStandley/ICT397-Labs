@@ -106,6 +106,7 @@ float Terrain::GetAverageHeight(int xpos, int zpos)
 
     heights.push_back(GetHeight(xpos - 1 , zpos - 1) / 10.0f);
     heights.push_back(GetHeight(xpos, zpos - 1) / 10.0f);
+    /*
     heights.push_back(GetHeight(xpos + 1, zpos - 1) / 10.0f);
 
     heights.push_back(GetHeight(xpos - 1, zpos) / 10.0f);
@@ -114,7 +115,7 @@ float Terrain::GetAverageHeight(int xpos, int zpos)
     heights.push_back(GetHeight(xpos - 1, zpos + 1) / 10.0f);
     heights.push_back(GetHeight(xpos, zpos + 1) / 10.0f);
     heights.push_back(GetHeight(xpos + 1, zpos + 1) / 10.0f);
-
+    */
     float tot = 0.0f;
     for (float h : heights)
     {

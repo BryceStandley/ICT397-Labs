@@ -66,6 +66,7 @@ void AppWindow::Init(std::string title, int h, int w)
     Camera c(15.0f, WorldToTerrainHeight(glm::vec3(15.0f, 0.0f, 11.0f))  + 1.5f, 11.0, 0.f, 1.0f, 0.f, 90.9f, -37.f);
     camera = c;
 
+    std::cout << "Loading MD2 Files..." << std::endl;
     CMD2Model m =  CMD2Model("./res/Shaders/mVert.glsl", "./res/Shaders/mFrag.glsl");
     md2Model = m;
     CMD2Model weapon =  CMD2Model("./res/Shaders/mVert.glsl", "./res/Shaders/mFrag.glsl");
@@ -318,6 +319,7 @@ void AppWindow::processInput(GLFWwindow* window)
     {
         direction = 0.0f;
         position.x += speed * deltaTime;
+        position.y = WorldToTerrainHeight(position) + 1.5f;
         md2Model.setPos(position);
         md2ModelWeapon.setPos(position);
     }
@@ -326,6 +328,7 @@ void AppWindow::processInput(GLFWwindow* window)
     {
         direction = 40.5f;
         position.x -= speed * deltaTime;
+        position.y = WorldToTerrainHeight(position) + 1.5f;
         md2Model.setPos(position);
         md2ModelWeapon.setPos(position);
     }
@@ -334,6 +337,7 @@ void AppWindow::processInput(GLFWwindow* window)
     {
         direction = 215.0f;
         position.z -= speed * deltaTime;
+        position.y = WorldToTerrainHeight(position) + 1.5f;
         md2Model.setPos(position);
         md2ModelWeapon.setPos(position);
     }
@@ -342,6 +346,7 @@ void AppWindow::processInput(GLFWwindow* window)
     {
         direction = 180.5f;
         position.z += speed * deltaTime;
+        position.y = WorldToTerrainHeight(position) + 1.5f;
         md2Model.setPos(position);
         md2ModelWeapon.setPos(position);
     }

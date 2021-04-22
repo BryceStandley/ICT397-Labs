@@ -5,6 +5,7 @@
 #include <vector>
 #include "Shader.h"
 #include "Texture.h"
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -21,7 +22,7 @@ class Terrain
 {
 
 protected:
-    unsigned char* terrainData; //data of the heightfield
+    
     float scaleX;
     float scaleY;
     float scaleZ;
@@ -42,7 +43,7 @@ private:
 
 public:
 
-
+    unsigned char* terrainData; //data of the heightfield
     Terrain();
     ~Terrain();
 

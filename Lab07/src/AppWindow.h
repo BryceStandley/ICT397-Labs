@@ -1,7 +1,10 @@
 #pragma once
 #include "Texture.h"
 #include "Window.h"
+
 #include <glm/glm.hpp>
+
+
 #include <iostream>
 #include "Terrain.h"
 #include "Camera.h"

@@ -3,7 +3,7 @@ project(Lab07)
 set(CMAKE_CXX_STANDARD 14)
 
 # Setting Find cmake files path
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakeFiles)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/FindPackages)
 
 
 

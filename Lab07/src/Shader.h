@@ -1,7 +1,9 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+
 #include <glm/glm.hpp>
+
 #include "Texture.h"
 #include <string>
 #include <fstream>
